@@ -1,0 +1,79 @@
+<!-- head para PC -->
+{% extends "entrada/base_entrada.html" %}
+{% load  static %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+<div class="grid-container">
+    <div class="grid-x grid-margin-x">
+        <div class="cell medium-10 large-16" style="margin-top: 2em;">
+            <div class="card" style="width: 100%;">
+                <div class="card-divider">
+                  <h4>Nueva Entra</h4>
+                </div>
+                <div class="card-section">
+                    <form class="grid-x grid-margin-x" method="post" enctype="multipart/form-data">{% csrf_token %}  
+                        {{ form.media }}                               
+                        <div class="cell large-12">
+                            <label>User:
+                            {{ form.user }}
+                            </label>
+                        </div>
+                        <div class="cell large-12">
+                            <label>Categoria:
+                            {{ form.category }}
+                            </label>
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Tag:
+                            {{ form.tag }}
+                            </label>
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Titulo:
+                            {{ form.title }}
+                            </label>
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Resumen:
+                            {{ form.resume }}
+                            </label>
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Contenido:                                                                                           
+                            {{ form.content }}
+                            </label>
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Public:
+                            {{ form.public }}
+                            </label>                        
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Imagen:
+                            {{ form.image }}
+                            </label>                        
+                        </div>
+                        <div class="cell medium-12">
+                            <label>Portada:
+                            {{ form.portada }}
+                            </label>                        
+                        </div>
+                        <div class="cell medium-12">
+                            <label>In home:
+                            {{ form.in_home }}
+                            </label>                        
+                        </div>
+                        <button type="submit" class="cell hollow button primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include "includes/footer.html" %}
+
+{% endblock content %}
